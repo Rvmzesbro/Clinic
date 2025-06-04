@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClinicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Doctors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patronymic" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdGender" Type="Int32" />
+    <Property Name="Phone" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Salary" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="IdSpeciality" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Genders" Relationship="Self.FK_Doctors_Gender" FromRole="Doctors" ToRole="Genders" />
+    <NavigationProperty Name="Specialitys" Relationship="Self.FK_Doctors_Specialitys" FromRole="Doctors" ToRole="Specialitys" />
+    <NavigationProperty Name="DoctorsShedule" Relationship="Self.FK_DoctorsShedule_Doctors" FromRole="Doctors" ToRole="DoctorsShedule" />
+    <NavigationProperty Name="Reception" Relationship="Self.FK_Reception_Doctors" FromRole="Doctors" ToRole="Reception" />
+  </EntityType>
+  <EntityType Name="DoctorsShedule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BeginingDate" Type="Time" Nullable="false" Precision="6" />
+    <Property Name="EndDate" Type="Time" Nullable="false" Precision="6" />
+    <Property Name="IdDoctor" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Doctors" Relationship="Self.FK_DoctorsShedule_Doctors" FromRole="DoctorsShedule" ToRole="Doctors" />
+  </EntityType>
+  <EntityType Name="Genders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Doctors" Relationship="Self.FK_Doctors_Gender" FromRole="Genders" ToRole="Doctors" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_Patients_Gender" FromRole="Genders" ToRole="Patients" />
+  </EntityType>
+  <EntityType Name="Patients">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patronymic" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdGender" Type="Int32" />
+    <Property Name="Phone" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DateBirthday" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IdPlots" Type="Int32" Nullable="false" />
+    <Property Name="Age" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Genders" Relationship="Self.FK_Patients_Gender" FromRole="Patients" ToRole="Genders" />
+    <NavigationProperty Name="Plots" Relationship="Self.FK_Patients_Plots" FromRole="Patients" ToRole="Plots" />
+    <NavigationProperty Name="Reception" Relationship="Self.FK_Reception_Patients" FromRole="Patients" ToRole="Reception" />
+  </EntityType>
+  <EntityType Name="Plots">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_Patients_Plots" FromRole="Plots" ToRole="Patients" />
+  </EntityType>
+  <EntityType Name="Reception">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdDoctor" Type="Int32" />
+    <Property Name="IdPatient" Type="Int32" Nullable="false" />
+    <Property Name="TimeNote" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Doctors" Relationship="Self.FK_Reception_Doctors" FromRole="Reception" ToRole="Doctors" />
+    <NavigationProperty Name="Patients" Relationship="Self.FK_Reception_Patients" FromRole="Reception" ToRole="Patients" />
+  </EntityType>
+  <EntityType Name="Specialitys">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Doctors" Relationship="Self.FK_Doctors_Specialitys" FromRole="Specialitys" ToRole="Doctors" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Doctors_Gender">
+    <End Role="Genders" Type="Self.Genders" Multiplicity="0..1" />
+    <End Role="Doctors" Type="Self.Doctors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Doctors">
+        <PropertyRef Name="IdGender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctors_Specialitys">
+    <End Role="Specialitys" Type="Self.Specialitys" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Doctors" Type="Self.Doctors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specialitys">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Doctors">
+        <PropertyRef Name="IdSpeciality" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoctorsShedule_Doctors">
+    <End Role="Doctors" Type="Self.Doctors" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DoctorsShedule" Type="Self.DoctorsShedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DoctorsShedule">
+        <PropertyRef Name="IdDoctor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reception_Doctors">
+    <End Role="Doctors" Type="Self.Doctors" Multiplicity="0..1" />
+    <End Role="Reception" Type="Self.Reception" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reception">
+        <PropertyRef Name="IdDoctor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_Gender">
+    <End Role="Genders" Type="Self.Genders" Multiplicity="0..1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="IdGender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_Plots">
+    <End Role="Plots" Type="Self.Plots" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plots">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="IdPlots" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reception_Patients">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Reception" Type="Self.Reception" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reception">
+        <PropertyRef Name="IdPatient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ClinicEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Doctors" EntityType="Self.Doctors" />
+    <EntitySet Name="DoctorsShedule" EntityType="Self.DoctorsShedule" />
+    <EntitySet Name="Genders" EntityType="Self.Genders" />
+    <EntitySet Name="Patients" EntityType="Self.Patients" />
+    <EntitySet Name="Plots" EntityType="Self.Plots" />
+    <EntitySet Name="Reception" EntityType="Self.Reception" />
+    <EntitySet Name="Specialitys" EntityType="Self.Specialitys" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Doctors_Gender" Association="Self.FK_Doctors_Gender">
+      <End Role="Genders" EntitySet="Genders" />
+      <End Role="Doctors" EntitySet="Doctors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctors_Specialitys" Association="Self.FK_Doctors_Specialitys">
+      <End Role="Specialitys" EntitySet="Specialitys" />
+      <End Role="Doctors" EntitySet="Doctors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoctorsShedule_Doctors" Association="Self.FK_DoctorsShedule_Doctors">
+      <End Role="Doctors" EntitySet="Doctors" />
+      <End Role="DoctorsShedule" EntitySet="DoctorsShedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reception_Doctors" Association="Self.FK_Reception_Doctors">
+      <End Role="Doctors" EntitySet="Doctors" />
+      <End Role="Reception" EntitySet="Reception" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_Gender" Association="Self.FK_Patients_Gender">
+      <End Role="Genders" EntitySet="Genders" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_Plots" Association="Self.FK_Patients_Plots">
+      <End Role="Plots" EntitySet="Plots" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reception_Patients" Association="Self.FK_Reception_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Reception" EntitySet="Reception" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
