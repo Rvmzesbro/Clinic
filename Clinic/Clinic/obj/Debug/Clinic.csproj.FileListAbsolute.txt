@@ -25,3 +25,4 @@ C:\Users\web2\Desktop\VisualStudioProjects\Clinic\Clinic\obj\Debug\Pages\Add.g.c
 C:\Users\web2\Desktop\VisualStudioProjects\Clinic\Clinic\obj\Debug\Pages\Edit.g.cs
 C:\Users\web2\Desktop\VisualStudioProjects\Clinic\Clinic\obj\Debug\Pages\Add.baml
 C:\Users\web2\Desktop\VisualStudioProjects\Clinic\Clinic\obj\Debug\Pages\Edit.baml
+C:\Users\web2\Desktop\VisualStudioProjects\Clinic\Clinic\obj\Debug\App.baml
