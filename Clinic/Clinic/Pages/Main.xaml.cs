@@ -122,12 +122,20 @@ namespace Clinic.Pages
 
         private void BTAdd_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Pages.Add());
+            NavigationService.Navigate(new Pages.Add(new Reception()));
         }
 
         private void BTEdit_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Pages.Edit());
+            if(!TIReception.IsSelected)
+            {
+                return ;
+            }
+            if(ReceptionGrid.SelectedItem is Reception reception)
+            {
+                NavigationService.Navigate(new Pages.Add(reception));
+            }
+                
         }
 
         private void BTDelete_Click(object sender, RoutedEventArgs e)
@@ -207,6 +215,9 @@ namespace Clinic.Pages
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            Bindings();
+            NewLists();
+
             if (TIDoctors.IsSelected)
             {
                 CBFilter.ItemsSource = doctors.Select(p => p.FullName);
@@ -223,6 +234,7 @@ namespace Clinic.Pages
             {
                 CBFilter.ItemsSource = shedules.Select(p => p.Doctors.FullName);
             }
+
         }
 
         private void MainTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -277,6 +289,13 @@ namespace Clinic.Pages
             }
 
         }
+
+        private void DoctorsGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        
     }
 }
 

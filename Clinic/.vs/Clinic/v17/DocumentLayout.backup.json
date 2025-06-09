@@ -3,40 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\clinic\\pages\\main.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\pages\\main.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\clinic\\pages\\add.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\pages\\add.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\clinic\\clinic\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\clinic\\clinic\\pages\\add.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\pages\\add.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\clinic\\clinic\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\clinic\\clinic\\models\\doctorsshedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\models\\doctorsshedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\clinic\\clinic\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\clinic\\clinic\\models\\reception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\models\\reception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\clinic\\clinic\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\clinic\\pages\\edit.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\pages\\edit.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\clinic\\models\\modeldata.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\models\\modeldata.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\clinic\\clinic\\pages\\main.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\pages\\main.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\clinic\\pages\\add.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\pages\\add.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\clinic\\clinic\\pages\\main.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\pages\\main.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\clinic\\models\\modeldata.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\models\\modeldata.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\clinic\\clinic\\pages\\edit.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\pages\\edit.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\clinic\\pages\\edit.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\pages\\edit.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\clinic\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\clinic\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\clinic\\clinic\\models\\sysdiagrams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\models\\sysdiagrams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|c:\\users\\web2\\desktop\\visualstudioprojects\\clinic\\clinic\\models\\doctors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\models\\doctors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\clinic\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\clinic\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{1B6384B5-DE38-46B8-8B18-18740302C615}|Clinic\\Clinic.csproj|solutionrelative:clinic\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,74 +70,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\App.config",
-              "RelativeDocumentMoniker": "Clinic\\App.config",
-              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\App.config",
-              "RelativeToolTip": "Clinic\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-06-05T07:25:01.931Z",
+              "DocumentIndex": 3,
+              "Title": "Reception.cs",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Models\\Reception.cs",
+              "RelativeDocumentMoniker": "Clinic\\Models\\Reception.cs",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Models\\Reception.cs",
+              "RelativeToolTip": "Clinic\\Models\\Reception.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T17:07:27.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Add.xaml",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Pages\\Add.xaml",
+              "RelativeDocumentMoniker": "Clinic\\Pages\\Add.xaml",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Pages\\Add.xaml",
+              "RelativeToolTip": "Clinic\\Pages\\Add.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-04T17:19:42.182Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\App.xaml",
-              "RelativeDocumentMoniker": "Clinic\\App.xaml",
-              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\App.xaml",
-              "RelativeToolTip": "Clinic\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-05T07:25:02.066Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "Clinic\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\MainWindow.xaml",
-              "RelativeToolTip": "Clinic\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-05T07:24:41.987Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "packages.config",
-              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\packages.config",
-              "RelativeDocumentMoniker": "Clinic\\packages.config",
-              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\packages.config",
-              "RelativeToolTip": "Clinic\\packages.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-06-05T07:24:41.674Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Main.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Pages\\Main.xaml.cs",
-              "RelativeDocumentMoniker": "Clinic\\Pages\\Main.xaml.cs",
-              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Pages\\Main.xaml.cs",
-              "RelativeToolTip": "Clinic\\Pages\\Main.xaml.cs",
-              "ViewState": "AgIAAJUAAAAAAAAAAAAswKUAAAAyAAAAAAAAAA==",
+              "Title": "Add.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Pages\\Add.xaml.cs",
+              "RelativeDocumentMoniker": "Clinic\\Pages\\Add.xaml.cs",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Pages\\Add.xaml.cs",
+              "RelativeToolTip": "Clinic\\Pages\\Add.xaml.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAowIUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T17:20:30.199Z",
+              "WhenOpened": "2025-06-09T11:04:32.763Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Edit.xaml",
               "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Pages\\Edit.xaml",
               "RelativeDocumentMoniker": "Clinic\\Pages\\Edit.xaml",
@@ -125,18 +124,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Add.xaml",
-              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Pages\\Add.xaml",
-              "RelativeDocumentMoniker": "Clinic\\Pages\\Add.xaml",
-              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Pages\\Add.xaml",
-              "RelativeToolTip": "Clinic\\Pages\\Add.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-04T17:19:42.182Z"
+              "DocumentIndex": 11,
+              "Title": "sysdiagrams.cs",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Models\\sysdiagrams.cs",
+              "RelativeDocumentMoniker": "Clinic\\Models\\sysdiagrams.cs",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Models\\sysdiagrams.cs",
+              "RelativeToolTip": "Clinic\\Models\\sysdiagrams.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T11:06:42.407Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 12,
+              "Title": "Doctors.cs",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Models\\Doctors.cs",
+              "RelativeDocumentMoniker": "Clinic\\Models\\Doctors.cs",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Models\\Doctors.cs",
+              "RelativeToolTip": "Clinic\\Models\\Doctors.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwB8AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T11:07:19.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Main.xaml",
               "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Pages\\Main.xaml",
               "RelativeDocumentMoniker": "Clinic\\Pages\\Main.xaml",
@@ -148,14 +162,103 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
+              "Title": "Pages\\Main.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Pages\\Main.xaml.cs",
+              "RelativeDocumentMoniker": "Clinic\\Pages\\Main.xaml.cs",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Pages\\Main.xaml.cs",
+              "RelativeToolTip": "Clinic\\Pages\\Main.xaml.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAswIoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T16:14:38.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ModelData.edmx [Diagram1]",
               "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Models\\ModelData.edmx",
               "RelativeDocumentMoniker": "Clinic\\Models\\ModelData.edmx",
               "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Models\\ModelData.edmx [Diagram1]",
               "RelativeToolTip": "Clinic\\Models\\ModelData.edmx [Diagram1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2025-06-02T11:25:34.355Z"
+              "WhenOpened": "2025-06-02T11:25:34.355Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Edit.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Pages\\Edit.xaml.cs",
+              "RelativeDocumentMoniker": "Clinic\\Pages\\Edit.xaml.cs",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Pages\\Edit.xaml.cs",
+              "RelativeToolTip": "Clinic\\Pages\\Edit.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T12:04:37.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DoctorsShedule.cs",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Models\\DoctorsShedule.cs",
+              "RelativeDocumentMoniker": "Clinic\\Models\\DoctorsShedule.cs",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\Models\\DoctorsShedule.cs",
+              "RelativeToolTip": "Clinic\\Models\\DoctorsShedule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T11:07:51.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Clinic\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\MainWindow.xaml",
+              "RelativeToolTip": "Clinic\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-05T07:24:41.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\App.config",
+              "RelativeDocumentMoniker": "Clinic\\App.config",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\App.config",
+              "RelativeToolTip": "Clinic\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAACoAQAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-06-05T07:25:01.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\App.xaml",
+              "RelativeDocumentMoniker": "Clinic\\App.xaml",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\App.xaml",
+              "RelativeToolTip": "Clinic\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-05T07:25:02.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "packages.config",
+              "DocumentMoniker": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\packages.config",
+              "RelativeDocumentMoniker": "Clinic\\packages.config",
+              "ToolTip": "C:\\Users\\web2\\Desktop\\VisualStudioProjects\\Clinic\\Clinic\\packages.config",
+              "RelativeToolTip": "Clinic\\packages.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-06-05T07:24:41.674Z"
             }
           ]
         }

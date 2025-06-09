@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Main"
       Loaded="Window_Loaded"
-      Background="White">
+      Background="#FFE6E6E6">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -21,7 +21,7 @@
         <Viewbox  Grid.Row="1" Margin="5">
             <TabControl Grid.Row="1" Margin="5" Name="MainTabControl"
         SelectionChanged="MainTabControl_SelectionChanged">
-                <TabItem x:Name="TIDoctors" Header="Doctors">
+                <TabItem x:Name="TIDoctors" Header="Врачи">
                     <DataGrid Name="DoctorsGrid" AutoGenerateColumns="False" CanUserAddRows="True" 
               CanUserDeleteRows="True" CanUserReorderColumns="True" 
               IsReadOnly="True"
@@ -29,22 +29,22 @@
                               SelectionMode="Single"
                               Background="#9370DB"
                               BorderBrush="Black"
-                              BorderThickness="1"
+                              BorderThickness="1" SelectionChanged="DoctorsGrid_SelectionChanged"
                               >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Surname" Binding="{Binding Surname}"/>
-                            <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                            <DataGridTextColumn Header="Patronymic" Binding="{Binding Patronymic}"/>
-                            <DataGridTextColumn Header="Gender" Binding="{Binding Genders.Name}"/>
-                            <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"/>
-                            <DataGridTextColumn Header="Salary" Binding="{Binding Salary}"/>
-                            <DataGridTextColumn Header="Speciality" Binding="{Binding Specialitys.Name}"/>
+                            <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}"/>
+                            <DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Отчество" Binding="{Binding Patronymic}"/>
+                            <DataGridTextColumn Header="Пол" Binding="{Binding Genders.Name}"/>
+                            <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}"/>
+                            <DataGridTextColumn Header="Зарплата" Binding="{Binding Salary}"/>
+                            <DataGridTextColumn Header="Специальность" Binding="{Binding Specialitys.Name}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
 
-                <TabItem Header="Patients"
+                <TabItem Header="Пациенты"
          x:Name="TIPatients">
                     <DataGrid Name="PatientsGrid" AutoGenerateColumns="False" CanUserAddRows="True" 
               CanUserDeleteRows="True" CanUserReorderColumns="True" 
@@ -52,19 +52,19 @@
               ItemsSource="{Binding}" SelectionMode="Single">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
-                            <DataGridTextColumn Header="Surname" Binding="{Binding Surname}"/>
-                            <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                            <DataGridTextColumn Header="Patronymic" Binding="{Binding Patronymic}"/>
-                            <DataGridTextColumn Header="Gender" Binding="{Binding Genders.Name}"/>
-                            <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"/>
-                            <DataGridTextColumn Header="Birthday" Binding="{Binding DateBirthday, StringFormat='dd.MM.yyyy'}"/>
-                            <DataGridTextColumn Header="Age" Binding="{Binding Age}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Plot" Binding="{Binding Plots.Name}"/>
+                            <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}"/>
+                            <DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Отчество" Binding="{Binding Patronymic}"/>
+                            <DataGridTextColumn Header="Пол" Binding="{Binding Genders.Name}"/>
+                            <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}"/>
+                            <DataGridTextColumn Header="День рождение" Binding="{Binding DateBirthday, StringFormat='dd.MM.yyyy'}"/>
+                            <DataGridTextColumn Header="Возраст" Binding="{Binding Age}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Участок" Binding="{Binding Plots.Name}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
 
-                <TabItem Header="Reception"
+                <TabItem Header="Записи"
          x:Name="TIReception">
                     <DataGrid Name="ReceptionGrid" AutoGenerateColumns="False" CanUserAddRows="True" 
               CanUserDeleteRows="True" CanUserReorderColumns="True" 
@@ -72,15 +72,15 @@
               ItemsSource="{Binding}" SelectionMode="Single">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Doctor" Binding="{Binding Doctors.FullName}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Patient" Binding="{Binding Patients.FullName}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Appointment Time" 
+                            <DataGridTextColumn Header="Врач" Binding="{Binding Doctors.FullName}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Пациент" Binding="{Binding Patients.FullName}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Время записи" 
                               Binding="{Binding TimeNote, StringFormat=dd.MM.yyyy HH:mm}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
 
-                <TabItem Header="Schedules"
+                <TabItem Header="Расписание врачей"
          x:Name="TISchedules">
                     <DataGrid Name="ShedulesGrid" AutoGenerateColumns="False" CanUserAddRows="True" 
               CanUserDeleteRows="True" CanUserReorderColumns="True" 
@@ -88,9 +88,9 @@
               ItemsSource="{Binding}" SelectionMode="Single">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Doctor" Binding="{Binding Doctors.FullName}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Start Time" Binding="{Binding BeginingDate, StringFormat='hh\\:mm'}"/>
-                            <DataGridTextColumn Header="End Time" Binding="{Binding EndDate, StringFormat='hh\\:mm'}"/>
+                            <DataGridTextColumn Header="Врач" Binding="{Binding Doctors.FullName}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Начало приема" Binding="{Binding BeginingDate, StringFormat='hh\\:mm'}"/>
+                            <DataGridTextColumn Header="Окончание приема" Binding="{Binding EndDate, StringFormat='hh\\:mm'}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
@@ -100,7 +100,7 @@
 
 
         <GroupBox Grid.Row="0"
-                  Header="Search"
+                  Header="Поиск"
                   Margin="5"
                   Foreground="Black">
             <StackPanel Orientation="Horizontal">
@@ -113,26 +113,30 @@
                       Height="25"
                           >
                 </ComboBox>
-                <Button x:Name="BTClear" Content="Clear" Click="BTClear_Click" Margin="5" 
-                    Width="80"/>
+                <Button x:Name="BTClear" Click="BTClear_Click" Margin="5" 
+                    Width="80"
+                        Height="20">
+                    <TextBlock Text="Очистить"
+                               FontSize="12"/>
+                </Button>
             </StackPanel>
         </GroupBox>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
             <Button x:Name="BTAdd"
-                Content="Add"
+                Content="Добавить"
                 Click="BTAdd_Click" 
                 Margin="5"
                     Width="100"
                     Height="30"/>
             <Button x:Name="BTEdit" 
-                Content="Edit" 
+                Content="Изменить" 
                 Click="BTEdit_Click" 
                 Margin="5"
                     Width="100"
                     Height="30"/>
             <Button x:Name="BTDelete"
-                Content="Delete"
+                Content="Удалить"
                 Click="BTDelete_Click" 
                 Margin="5"
                     Width="100"
