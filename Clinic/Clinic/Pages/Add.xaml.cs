@@ -26,19 +26,53 @@ namespace Clinic.Pages
     public partial class Add : Page
     {
         public Reception Reception { get; set; }
-        public Add(Reception reception)
+        private bool isEditMode = false;
+        public Add(Reception reception = null)
         {
             InitializeComponent();
+            Reception = reception ?? new Reception();
+            isEditMode = reception != null;
+
             LoadData();
             SelectedReception(reception);
             Bindings();
             DataContext = this;
-            Reception = reception;
         }
 
         private void SelectedReception(Reception reception)
         {
+            if (reception != null) // Если запись существует (режим редактирования)
+            {
+                // Загружаем данные пациента
+                var patient = App.db.Patients.Find(reception.IdPatient);
+                if (patient != null)
+                {
+                    PatientSurnameTextBox.Text = patient.Surname;
+                    PatientNameTextBox.Text = patient.Name;
+                    PatientPatronymicTextBox.Text = patient.Patronymic;
+                    PatientPhoneTextBox.Text = patient.Phone;
+                    PatientBirthDatePicker.SelectedDate = patient.DateBirthday;
+                    GenderComboBox.SelectedValue = patient.IdGender;
+                }
 
+                // Загружаем данные врача
+                var doctor = App.db.Doctors.Find(reception.IdDoctor);
+                if (doctor != null)
+                {
+                    SpecialitiesComboBox.SelectedValue = doctor.IdSpeciality;
+                    DoctorsComboBox.SelectedValue = doctor.Id;
+                }
+
+                // Устанавливаем дату и время приёма
+                AppointmentDatePicker.SelectedDate = reception.TimeNote;
+
+                // Добавляем текущее время в список доступных слотов
+                var availableSlots = new List<DateTime> { reception.TimeNote };
+                TimeSlotsListBox.ItemsSource = availableSlots;
+                TimeSlotsListBox.SelectedItem = availableSlots.FirstOrDefault(t =>
+            t.Hour == reception.TimeNote.Hour &&
+            t.Minute == reception.TimeNote.Minute);
+            }
         }
 
         private void Bindings()
@@ -101,12 +135,12 @@ namespace Clinic.Pages
                 .Where(s => s.IdDoctor == doctorId)
                 .ToList();
 
-            // Получаем уже занятые временные слоты (используем DbFunctions для извлечения времени)
+            // Получаем уже занятые временные слоты
             var bookedSlots = App.db.Reception
                 .Where(r => r.IdDoctor == doctorId &&
                            DbFunctions.TruncateTime(r.TimeNote) == selectedDate.Date)
                 .ToList()
-                .Select(r => r.TimeNote.TimeOfDay) // Теперь преобразуем в TimeOfDay после получения данных
+                .Select(r => r.TimeNote.TimeOfDay)
                 .ToList();
 
             // Генерируем доступные временные слоты
@@ -123,15 +157,20 @@ namespace Clinic.Pages
                     // Проверяем, не занят ли слот
                     if (!bookedSlots.Contains(slot))
                     {
-                        availableSlots.Add(new DateTime(Reception.TimeNote.Year, Reception.TimeNote.Month, Reception.TimeNote.Day, slot.Hours, slot.Minutes, slot.Seconds));
+                        availableSlots.Add(selectedDate.Date.Add(slot));
                     }
                 }
             }
 
             // Отображаем доступные слоты
-            TimeSlotsListBox.ItemsSource = availableSlots
-                .OrderBy(t => t)
-                ;
+            TimeSlotsListBox.ItemsSource = availableSlots.OrderBy(t => t);
+
+            // Если это режим редактирования, выбираем текущее время записи
+            if (isEditMode && Reception != null)
+            {
+                TimeSlotsListBox.SelectedItem = availableSlots.FirstOrDefault(t =>
+                    t.TimeOfDay == Reception.TimeNote.TimeOfDay);
+            }
         }
 
         private void BookAppointment_Click(object sender, RoutedEventArgs e)
@@ -225,6 +264,7 @@ namespace Clinic.Pages
             {
                 MessageBox.Show($"Ошибка: {ex.Message}\n\nПодробности: {ex.InnerException?.Message}");
             }
+
         }
 
         private void ClearForm()

@@ -47,13 +47,13 @@
 
                     <!-- Доступные временные слоты -->
                     <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock Text="Доступное время:" Width="100" VerticalAlignment="Center"/>
+                        <TextBlock Text="Доступное время:" Width="200" VerticalAlignment="Center"/>
                         <ListBox x:Name="TimeSlotsListBox" Width="200" Height="100"
                                  
                                  >
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding  StringFormat='HH:mm'}"/>
+                                    <TextBlock Text="{Binding StringFormat='HH:mm'}"/>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
