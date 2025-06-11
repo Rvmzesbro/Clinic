@@ -26,53 +26,20 @@ namespace Clinic.Pages
     public partial class Add : Page
     {
         public Reception Reception { get; set; }
-        private bool isEditMode = false;
-        public Add(Reception reception = null)
+
+        public Add()
         {
             InitializeComponent();
-            Reception = reception ?? new Reception();
-            isEditMode = reception != null;
-
             LoadData();
-            SelectedReception(reception);
+            //SelectedReception(reception);
+
             Bindings();
-            DataContext = this;
+            
         }
 
         private void SelectedReception(Reception reception)
         {
-            if (reception != null) // Если запись существует (режим редактирования)
-            {
-                // Загружаем данные пациента
-                var patient = App.db.Patients.Find(reception.IdPatient);
-                if (patient != null)
-                {
-                    PatientSurnameTextBox.Text = patient.Surname;
-                    PatientNameTextBox.Text = patient.Name;
-                    PatientPatronymicTextBox.Text = patient.Patronymic;
-                    PatientPhoneTextBox.Text = patient.Phone;
-                    PatientBirthDatePicker.SelectedDate = patient.DateBirthday;
-                    GenderComboBox.SelectedValue = patient.IdGender;
-                }
 
-                // Загружаем данные врача
-                var doctor = App.db.Doctors.Find(reception.IdDoctor);
-                if (doctor != null)
-                {
-                    SpecialitiesComboBox.SelectedValue = doctor.IdSpeciality;
-                    DoctorsComboBox.SelectedValue = doctor.Id;
-                }
-
-                // Устанавливаем дату и время приёма
-                AppointmentDatePicker.SelectedDate = reception.TimeNote;
-
-                // Добавляем текущее время в список доступных слотов
-                var availableSlots = new List<DateTime> { reception.TimeNote };
-                TimeSlotsListBox.ItemsSource = availableSlots;
-                TimeSlotsListBox.SelectedItem = availableSlots.FirstOrDefault(t =>
-            t.Hour == reception.TimeNote.Hour &&
-            t.Minute == reception.TimeNote.Minute);
-            }
         }
 
         private void Bindings()
@@ -89,8 +56,17 @@ namespace Clinic.Pages
             GenderComboBox.ItemsSource = App.db.Genders.ToList();
 
             // Загрузка существующих записей
+            LoadAppointments();
         }
 
+        private void LoadAppointments()
+        {
+            AppointmentsDataGrid.ItemsSource = App.db.Reception
+                .Include(r => r.Doctors)
+                .Include(r => r.Doctors.Specialitys)
+                .Include(r => r.Patients)
+                .ToList();
+        }
 
         private void SpecialitiesComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -99,8 +75,15 @@ namespace Clinic.Pages
                 // Загрузка врачей выбранной специальности
                 DoctorsComboBox.ItemsSource = App.db.Doctors
                     .Where(d => d.IdSpeciality == selectedSpeciality.Id)
-                    .ToList();
-                DoctorsComboBox.SelectedItem = Reception.Doctors;
+                    .ToList()
+                    .Select(d => new
+                    {
+                        d.Id,
+                        FullName = $"{d.Surname} {d.Name} {d.Patronymic}",
+                        d.Specialitys
+                    });
+
+                DoctorsComboBox.SelectedIndex = -1;
                 TimeSlotsListBox.ItemsSource = null;
             }
         }
@@ -135,16 +118,16 @@ namespace Clinic.Pages
                 .Where(s => s.IdDoctor == doctorId)
                 .ToList();
 
-            // Получаем уже занятые временные слоты
+            // Получаем уже занятые временные слоты (используем DbFunctions для извлечения времени)
             var bookedSlots = App.db.Reception
                 .Where(r => r.IdDoctor == doctorId &&
                            DbFunctions.TruncateTime(r.TimeNote) == selectedDate.Date)
                 .ToList()
-                .Select(r => r.TimeNote.TimeOfDay)
+                .Select(r => r.TimeNote.TimeOfDay) // Теперь преобразуем в TimeOfDay после получения данных
                 .ToList();
 
             // Генерируем доступные временные слоты
-            var availableSlots = new List<DateTime>();
+            var availableSlots = new List<TimeSpan>();
 
             foreach (var schedule in schedules)
             {
@@ -157,20 +140,15 @@ namespace Clinic.Pages
                     // Проверяем, не занят ли слот
                     if (!bookedSlots.Contains(slot))
                     {
-                        availableSlots.Add(selectedDate.Date.Add(slot));
+                        availableSlots.Add(slot);
                     }
                 }
             }
 
             // Отображаем доступные слоты
-            TimeSlotsListBox.ItemsSource = availableSlots.OrderBy(t => t);
-
-            // Если это режим редактирования, выбираем текущее время записи
-            if (isEditMode && Reception != null)
-            {
-                TimeSlotsListBox.SelectedItem = availableSlots.FirstOrDefault(t =>
-                    t.TimeOfDay == Reception.TimeNote.TimeOfDay);
-            }
+            TimeSlotsListBox.ItemsSource = availableSlots
+                .OrderBy(t => t)
+                .Select(t => $"{t.Hours:00}:{t.Minutes:00}");
         }
 
         private void BookAppointment_Click(object sender, RoutedEventArgs e)
@@ -199,35 +177,22 @@ namespace Clinic.Pages
                 dynamic selectedDoctor = DoctorsComboBox.SelectedItem;
                 int doctorId = selectedDoctor.Id;
                 DateTime selectedDate = AppointmentDatePicker.SelectedDate.Value;
+                TimeSpan selectedTime = TimeSpan.Parse(TimeSlotsListBox.SelectedItem.ToString());
 
-                // Парсим выбранное время с точностью до минуты
-                string[] timeParts = TimeSlotsListBox.SelectedItem.ToString().Split(':');
-                if (timeParts.Length != 2 || !int.TryParse(timeParts[0], out int hours) ||
-                    !int.TryParse(timeParts[1], out int minutes))
-                {
-                    MessageBox.Show("Неверный формат времени!");
-                    return;
-                }
+                // Создаем дату и время приема
+                DateTime appointmentDateTime = selectedDate.Date.Add(selectedTime);
 
-                DateTime appointmentDateTime = selectedDate.Date.Add(new TimeSpan(hours, minutes, 0));
-
-                // Точная проверка доступности времени
+                // Проверяем, не занято ли уже это время
                 bool isSlotAvailable = !App.db.Reception
-                    .AsNoTracking()
-                    .Any(r => r.IdDoctor == doctorId &&
-                             EntityFunctions.TruncateTime(r.TimeNote) == selectedDate.Date &&
-                             r.TimeNote.Hour == hours &&
-                             r.TimeNote.Minute == minutes);
+                    .Any(r => r.IdDoctor == doctorId && r.TimeNote == appointmentDateTime);
 
                 if (!isSlotAvailable)
                 {
                     MessageBox.Show("Выбранное время уже занято. Пожалуйста, выберите другое время.");
-                    // Обновляем список доступных слотов
-                    UpdateAvailableTimeSlots();
                     return;
                 }
 
-                // Создаем пациента
+                // Создаем или находим пациента
                 var patient = new Patients
                 {
                     Surname = PatientSurnameTextBox.Text,
@@ -236,13 +201,13 @@ namespace Clinic.Pages
                     IdGender = ((Genders)GenderComboBox.SelectedItem).Id,
                     Phone = PatientPhoneTextBox.Text,
                     DateBirthday = PatientBirthDatePicker.SelectedDate.Value,
-                    IdPlots = 1
+                    IdPlots = 1 // По умолчанию участок 1, можно добавить выбор участка
                 };
 
                 App.db.Patients.Add(patient);
                 App.db.SaveChanges();
 
-                // Создаем запись
+                // Создаем запись на прием
                 var reception = new Reception
                 {
                     IdDoctor = doctorId,
@@ -253,18 +218,18 @@ namespace Clinic.Pages
                 App.db.Reception.Add(reception);
                 App.db.SaveChanges();
 
-                MessageBox.Show($"Успешная запись!\nВрач: {selectedDoctor.FullName}\nДата: {appointmentDateTime:dd.MM.yyyy HH:mm}");
+                MessageBox.Show("Запись на прием успешно создана!");
 
-                
+                // Обновляем список записей
+                LoadAppointments();
+
+                // Очищаем форму
                 ClearForm();
-                Bindings();
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка: {ex.Message}\n\nПодробности: {ex.InnerException?.Message}");
+                MessageBox.Show($"Ошибка при создании записи: {ex.Message}");
             }
-
         }
 
         private void ClearForm()
@@ -277,6 +242,7 @@ namespace Clinic.Pages
             GenderComboBox.SelectedIndex = -1;
             TimeSlotsListBox.ItemsSource = null;
         }
+    
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

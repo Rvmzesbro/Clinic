@@ -122,19 +122,19 @@ namespace Clinic.Pages
 
         private void BTAdd_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Pages.Add(new Reception()));
+            NavigationService.Navigate(new Pages.Add());
         }
 
         private void BTEdit_Click(object sender, RoutedEventArgs e)
         {
-            if(!TIReception.IsSelected)
-            {
-                return ;
-            }
-            if(ReceptionGrid.SelectedItem is Reception reception)
-            {
-                NavigationService.Navigate(new Pages.Add(reception));
-            }
+            //if(!TIReception.IsSelected)
+            //{
+            //    return;
+            //}
+            //if(ReceptionGrid.SelectedItem is Reception reception)
+            //{
+            //    NavigationService.Navigate(new Pages.Add(reception));
+            //}
                 
         }
 
