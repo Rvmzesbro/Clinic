@@ -122,25 +122,45 @@ namespace Clinic.Pages
 
         private void BTAdd_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Pages.Add());
+            bool flag = false;
+            NavigationService.Navigate(new Pages.Add(new Reception(), flag));
         }
 
         private void BTEdit_Click(object sender, RoutedEventArgs e)
         {
-            //if(!TIReception.IsSelected)
-            //{
-            //    return;
-            //}
-            //if(ReceptionGrid.SelectedItem is Reception reception)
-            //{
-            //    NavigationService.Navigate(new Pages.Add(reception));
-            //}
-                
+            if (!TIReception.IsSelected)
+            {
+                return;
+            }
+           
+            if (ReceptionGrid.SelectedItem is Reception reception)
+            {
+                bool flag = true;
+                NavigationService.Navigate(new Add(reception, flag));
+            }
+            else
+            {
+                MessageBox.Show("Выберите запись для редактирования!");
+            }
+
         }
 
         private void BTDelete_Click(object sender, RoutedEventArgs e)
         {
+            if (!TIReception.IsSelected)
+            {
+                return;
+            }
 
+            if (ReceptionGrid.SelectedItem is Reception reception)
+            {
+                bool flag = true;
+                NavigationService.Navigate(new Add(reception, flag));
+            }
+            else
+            {
+                MessageBox.Show("Выберите запись для удаления!");
+            }
         }
 
 
